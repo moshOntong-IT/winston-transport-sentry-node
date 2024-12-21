@@ -1,5 +1,5 @@
 import * as Sentry from "@sentry/node";
-import TransportStream = require("winston-transport");
+import TransportStream from "winston-transport";
 import { LEVEL } from "triple-beam";
 
 enum SentrySeverity {
@@ -42,7 +42,7 @@ class ExtendedError extends Error {
   }
 }
 
-export default class SentryTransport extends TransportStream {
+export class SentryTransport extends TransportStream {
   public silent = false;
 
   private levelsMap: SeverityOptions = {};
